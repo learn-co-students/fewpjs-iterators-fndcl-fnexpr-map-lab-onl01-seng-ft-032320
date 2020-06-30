@@ -13,14 +13,20 @@ const tutorials = [
 
 // 1 Function code refractored from 2 function solution
 
-function titleCased(tutorials) {
-  result = tutorials.map(function(tutorial) {
-    return tutorial.toLowerCase().split(' ').map(function(word) {
-        return (word.charAt(0).toUpperCase() + word.slice(1));      
-    }).join(' ');
+function titleCased() {
+  return tutorials.map(function (tutorial) {
 
+    let singleTutorialArray = tutorial.split(' ')
+
+    
+    let capitalizedTutorial = singleTutorialArray.map(function (word) { 
+   
+      return word.charAt(0).toUpperCase() + word.slice(1)
+    })
+    let final = capitalizedTutorial.join(' ')
+ 
+    return final
   });
-  result
 }
 
 

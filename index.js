@@ -12,5 +12,14 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map(tutorial => 
+    tutorial.split(' ')
+      .map(word => {
+        if (word === "jsonp?" || word === "api" || word === "oo") {
+          return word.toUpperCase()
+        } else {
+        return word.charAt(0).toUpperCase() + word.substring(1)
+        }
+      })
+      .join(' '));
 }

@@ -1,3 +1,4 @@
+  
 const tutorials = [
   'what does the this keyword mean?',
   'What is the Contutorialuctor OO pattern?',
@@ -12,5 +13,13 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map( line => {
+    let words = line.split(' ')
+
+    let capitalizedWords = words.map( word => word.replace(word[0], word[0].toUpperCase()) )
+
+    let response = capitalizedWords.join(' ')
+
+    return response
+  })
 }
